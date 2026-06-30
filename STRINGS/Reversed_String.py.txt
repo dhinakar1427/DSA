@@ -1,0 +1,8 @@
+str_val = " DHINAKAR"
+reversedstring = " " 
+
+for i in range (len(str_val)-1,-1,-1)
+    reversedString += str_val[i]
+print(reversedString)
+
+
