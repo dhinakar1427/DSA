@@ -1,0 +1,9 @@
+str1 ="hello"
+str2 ="dhina"
+#with using plus operator
+str3 = str1 + " " + str2
+print(str3)
+
+#without using plus operator
+str4 = " ".join([str1, str2])
+print(str4)
