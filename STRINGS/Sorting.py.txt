@@ -1,0 +1,3 @@
+str_val = "cabedf"
+sorted_str = ','.join(sorted(str_val))
+print(sorted_str)
