@@ -1,0 +1,25 @@
+class Solution:
+    def compress(self, chars: List[str]) -> int:
+         write = 0     # compressed result ah edhu write pannuvomo
+         read = 0      # original array ah edhu read pannuvomo
+    
+         while read < len(chars):
+             char = chars[read]
+             count = 0
+        
+             # same character evlo times repeat aaguthu nu count pannu
+             while read < len(chars) and chars[read] == char:
+                 read += 1
+                 count += 1
+        
+             # character ah write pannu
+             chars[write] = char
+             write += 1
+        
+             # count 1 ku mela na, count ah digit digit ah write pannu
+             if count > 1:
+                 for digit in str(count):
+                     chars[write] = digit
+                     write += 1
+    
+         return write
