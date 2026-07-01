@@ -1,0 +1,12 @@
+#using built-in method
+str = "The quick brown fox jumps over the lazy dog"
+print(str.count("e"))
+
+#using for loop
+str1 = "The quick brown fox jumps over the lazy dog"
+target = "o"
+count = 0
+for i in str1:
+    if i == target:
+        count += 1
+print(count)
