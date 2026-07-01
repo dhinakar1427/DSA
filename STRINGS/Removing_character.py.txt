@@ -1,0 +1,16 @@
+#using replace() method to remove unwanted characters from a string
+
+str_val = "vanakkam"
+unwanted_chars = "a"
+result = str_val.replace(unwanted_chars, "")
+print(result)
+
+#using for loop to remove unwanted characters from a string
+
+str_val = "vanakkam"
+unwanted_chars = "a"
+result = ""
+for char in str_val:
+    if char not in unwanted_chars:
+        result += char
+print(result)

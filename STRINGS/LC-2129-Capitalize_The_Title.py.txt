@@ -1,0 +1,11 @@
+class Solution:
+    def capitalizeTitle(self, title: str) -> str:
+        words = title.split(' ')       #sentence a words ah split pandrom
+        result = []                   #create empty list
+
+        for w in words:
+            if len(w) <= 2:
+                result.append(w.lower()) # small wod -> lowercase
+            else:
+                result.append(w[0].upper() + w[1:].lower())
+        return ' '.join(result)   #words ah back space vachu join pannuvom
