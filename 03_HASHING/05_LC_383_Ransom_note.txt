@@ -1,0 +1,4 @@
+class Solution:
+    from collections import Counter
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        return not (Counter(ransomNote) - Counter(magazine))

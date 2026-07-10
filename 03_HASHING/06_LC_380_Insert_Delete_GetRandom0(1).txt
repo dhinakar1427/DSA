@@ -1,0 +1,41 @@
+import random
+
+class RandomizedSet:
+    def __init__(self):
+        self.arr = []                    #values store panna
+        self.val_to_index = {}           #values -> index mapping (fast lookup)
+
+    def insert(self, val: int) -> bool:
+        if val in self.val_to_index:
+            return False
+
+        self.arr.append(val)
+        self.val_to_index[val] = len(self.arr) -1
+        return True
+        
+    def remove(self, val: int) -> bool:
+        if val not in self.val_to_index:
+            return False
+        
+        #TRICK: remove panna vendiya element a last element oda swap
+        index_to_remove = self.val_to_index[val]
+        last_element = self.arr[-1]
+        
+        #last element ah remove panna vendiya position ku kondu varnum
+        self.arr[index_to_remove] = last_element
+        self.val_to_index[last_element] = index_to_remove
+
+        #last element a pop pannanum (now this is duplicate)
+        self.arr.pop()
+        del self.val_to_index[val]
+        return True
+
+    def getRandom(self) -> int:
+        return random.choice(self.arr)
+
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
